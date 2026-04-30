@@ -16,7 +16,7 @@ export default function MentionsLegalesPage() {
           <div className="h-px w-12 bg-gold" />
         </div>
 
-        <div className="space-y-12 font-jost text-sm text-charcoal-light font-light leading-relaxed">
+        <div className="space-y-12 font-jost text-lg text-charcoal-light font-light leading-relaxed">
           <section>
             <h2 className="font-cormorant text-2xl text-charcoal mb-4">Éditeur du site</h2>
             <p>Le présent site est édité par :</p>

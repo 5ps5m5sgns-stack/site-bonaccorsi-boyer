@@ -60,8 +60,8 @@ export default function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        {/* 3-column layout: logo | nav | phone+cta */}
-        <div className="max-w-screen-xl mx-auto px-6 xl:px-10 h-20 xl:h-24 grid grid-cols-[auto_1fr_auto] items-center gap-6">
+        {/* 3-column layout: logo fixe | nav centré | phone+cta */}
+        <div className="max-w-screen-xl mx-auto px-6 xl:px-10 h-20 xl:h-24 grid grid-cols-[240px_1fr_240px] items-center gap-4">
 
           {/* ── Logo ── */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
@@ -123,7 +123,7 @@ export default function Navigation() {
           </nav>
 
           {/* ── Right : téléphone + bouton ── */}
-          <div className="hidden xl:flex items-center gap-5 shrink-0">
+          <div className="hidden xl:flex items-center justify-end gap-5">
             <a
               href="tel:+33664736845"
               className={`text-sm font-medium tracking-wide transition-colors duration-200 whitespace-nowrap ${

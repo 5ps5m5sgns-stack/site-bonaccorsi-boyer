@@ -163,7 +163,7 @@ export default function ServicesPage() {
             </h1>
           </div>
           <p
-            className="font-jost text-base text-stone font-light max-w-xl mt-8 leading-relaxed animate-fade-in-up"
+            className="font-jost text-lg text-stone font-light max-w-xl mt-8 leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.6s' }}
           >
             Le cabinet Bonaccorsi-Boyer couvre l'ensemble des matières du droit de la famille,
@@ -203,7 +203,7 @@ export default function ServicesPage() {
                 {String(si + 1).padStart(2, '0')} — {section.label}
               </p>
               <h2 className="display-md text-charcoal mb-6 max-w-xl">{section.title}</h2>
-              <p className="font-jost text-base text-stone font-light max-w-2xl leading-relaxed">
+              <p className="font-jost text-lg text-stone font-light max-w-2xl leading-relaxed">
                 {section.intro}
               </p>
             </AnimatedSection>
@@ -218,7 +218,7 @@ export default function ServicesPage() {
                         <h3 className="font-cormorant text-xl text-charcoal mb-3 group-hover:text-burgundy transition-colors duration-200">
                           {srv.title}
                         </h3>
-                        <p className="font-jost text-base text-stone font-light leading-relaxed">{srv.desc}</p>
+                        <p className="font-jost text-lg text-stone font-light leading-relaxed">{srv.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -234,7 +234,7 @@ export default function ServicesPage() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
           <AnimatedSection>
             <h2 className="display-md text-cream mb-6">Une question sur votre situation ?</h2>
-            <p className="font-jost text-base text-cream/70 font-light max-w-md mx-auto mb-10">
+            <p className="font-jost text-lg text-cream/70 font-light max-w-md mx-auto mb-10">
               Maître Bonaccorsi-Boyer vous reçoit en consultation pour analyser votre dossier
               et vous orienter vers la meilleure stratégie.
             </p>

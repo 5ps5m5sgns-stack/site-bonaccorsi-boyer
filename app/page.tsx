@@ -145,7 +145,7 @@ export default function HomePage() {
             <p className="font-cormorant text-2xl lg:text-3xl font-light text-cream/70 mb-3">
               Maître Vanessa Bonaccorsi-Boyer
             </p>
-            <p className="font-jost text-base font-light text-stone max-w-lg leading-relaxed">
+            <p className="font-jost text-lg font-light text-stone max-w-lg leading-relaxed">
               Avocate au Barreau de Lyon depuis plus de 25 ans, spécialisée en droit
               de la famille, du patrimoine et des successions. Une expertise technique
               au service d'une approche profondément humaine.
@@ -187,7 +187,7 @@ export default function HomePage() {
                 <blockquote className="font-cormorant text-3xl lg:text-4xl font-light text-charcoal italic leading-snug mb-6">
                   « La technique au service de vos intérêts — depuis 25 ans. »
                 </blockquote>
-                <p className="font-jost text-base text-stone font-light leading-relaxed">
+                <p className="font-jost text-lg text-stone font-light leading-relaxed">
                   Le cabinet Bonaccorsi-Boyer s'est forgé une réputation d'excellence dans
                   le droit de la famille et du patrimoine. Formée à la fois en droit notarial
                   et judiciaire, Maître Bonaccorsi-Boyer apporte une double expertise rare,
@@ -226,7 +226,7 @@ export default function HomePage() {
                   <h3 className="font-cormorant text-2xl text-charcoal mb-4 group-hover:text-burgundy transition-colors duration-200">
                     {s.title}
                   </h3>
-                  <p className="font-jost text-base text-stone font-light leading-relaxed mb-8">{s.desc}</p>
+                  <p className="font-jost text-lg text-stone font-light leading-relaxed mb-8">{s.desc}</p>
                   <span className="label text-gold/60 group-hover:text-gold transition-colors duration-200">
                     En savoir plus →
                   </span>
@@ -261,7 +261,7 @@ export default function HomePage() {
                 <h2 className="display-md text-charcoal mb-6">
                   Le Divorce<br />Amiable
                 </h2>
-                <p className="font-jost text-base text-stone font-light leading-relaxed mb-10 max-w-sm">
+                <p className="font-jost text-lg text-stone font-light leading-relaxed mb-10 max-w-sm">
                   Depuis la réforme de 2017, le divorce par consentement mutuel se conclut
                   sans passer devant un juge. Un processus plus rapide, moins coûteux,
                   et préservant la sérénité de toute la famille.
@@ -288,7 +288,7 @@ export default function HomePage() {
                       <p className="font-cormorant text-lg text-charcoal mb-1 group-hover:text-burgundy transition-colors duration-200">
                         {step.title}
                       </p>
-                      <p className="font-jost text-base text-stone font-light leading-relaxed">{step.desc}</p>
+                      <p className="font-jost text-lg text-stone font-light leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -339,7 +339,7 @@ export default function HomePage() {
                 Maître Vanessa<br />Bonaccorsi-Boyer
               </h2>
               <div className="h-px w-12 bg-gold mb-8" />
-              <p className="font-jost text-base text-stone font-light leading-relaxed mb-6">
+              <p className="font-jost text-lg text-stone font-light leading-relaxed mb-6">
                 Avocate au Barreau de Lyon depuis plus de 25 ans, Maître Bonaccorsi-Boyer
                 a développé une expertise rare à la croisée du droit judiciaire et notarial.
                 <br /><br />
@@ -381,7 +381,7 @@ export default function HomePage() {
             <h2 className="display-lg text-cream mb-6">
               Parlons de votre situation
             </h2>
-            <p className="font-jost text-base text-cream/70 font-light max-w-lg mx-auto mb-10 leading-relaxed">
+            <p className="font-jost text-lg text-cream/70 font-light max-w-lg mx-auto mb-10 leading-relaxed">
               Maître Bonaccorsi-Boyer reçoit du lundi au dimanche, de 9h à 20h.
               Prenez rendez-vous pour un premier entretien confidentiel.
             </p>
