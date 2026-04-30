@@ -133,7 +133,7 @@ export default function DivorceAmiablePage() {
             </h1>
           </div>
           <p
-            className="font-jost text-sm text-stone font-light max-w-xl leading-relaxed animate-fade-in-up"
+            className="font-jost text-base text-stone font-light max-w-xl leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.6s' }}
           >
             Depuis la réforme de 2017, le divorce par consentement mutuel se déroule sans passage
@@ -201,7 +201,7 @@ export default function DivorceAmiablePage() {
                 <div className="bg-parchment p-10 h-full">
                   <p className="text-3xl mb-6" aria-hidden>{a.icon}</p>
                   <h3 className="font-cormorant text-xl text-charcoal mb-3">{a.title}</h3>
-                  <p className="font-jost text-xs text-stone font-light leading-relaxed">{a.desc}</p>
+                  <p className="font-jost text-base text-stone font-light leading-relaxed">{a.desc}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -227,7 +227,7 @@ export default function DivorceAmiablePage() {
                       <h3 className="font-cormorant text-2xl text-cream mb-3 group-hover:text-gold transition-colors duration-200">
                         {step.title}
                       </h3>
-                      <p className="font-jost text-xs text-stone font-light leading-relaxed">{step.detail}</p>
+                      <p className="font-jost text-base text-stone font-light leading-relaxed">{step.detail}</p>
                     </div>
                   </div>
                 </div>
@@ -250,7 +250,7 @@ export default function DivorceAmiablePage() {
               <StaggerItem key={item.q}>
                 <div className="py-8">
                   <h3 className="font-cormorant text-xl text-charcoal mb-3">{item.q}</h3>
-                  <p className="font-jost text-xs text-stone font-light leading-relaxed">{item.a}</p>
+                  <p className="font-jost text-base text-stone font-light leading-relaxed">{item.a}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -263,7 +263,7 @@ export default function DivorceAmiablePage() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
           <AnimatedSection>
             <h2 className="display-md text-cream mb-6">Votre situation est unique</h2>
-            <p className="font-jost text-sm text-cream/70 font-light max-w-lg mx-auto mb-10 leading-relaxed">
+            <p className="font-jost text-base text-cream/70 font-light max-w-lg mx-auto mb-10 leading-relaxed">
               Avant de vous engager dans une procédure, rencontrez Maître Bonaccorsi-Boyer
               pour une analyse précise de votre situation et de vos droits.
             </p>

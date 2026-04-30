@@ -53,28 +53,28 @@ export default function ContactForm() {
     )
   }
 
-  const inputClass = `w-full bg-transparent border-b border-stone/30 focus:border-gold outline-none py-3 label text-charcoal placeholder-stone/50 transition-colors duration-200`
+  const inputClass = `w-full bg-transparent border-b border-stone/30 focus:border-gold outline-none py-3.5 text-base font-light text-charcoal placeholder-stone/40 transition-colors duration-200`
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <div>
-          <label htmlFor="name" className="label text-stone block mb-2">Nom & Prénom *</label>
+          <label htmlFor="name" className="text-sm font-medium text-stone block mb-2 tracking-wide">Nom & Prénom *</label>
           <input id="name" name="name" type="text" required className={inputClass} placeholder="Marie Dupont" />
         </div>
         <div>
-          <label htmlFor="email" className="label text-stone block mb-2">Adresse e-mail *</label>
+          <label htmlFor="email" className="text-sm font-medium text-stone block mb-2 tracking-wide">Adresse e-mail *</label>
           <input id="email" name="email" type="email" required className={inputClass} placeholder="marie@exemple.fr" />
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <div>
-          <label htmlFor="phone" className="label text-stone block mb-2">Téléphone</label>
+          <label htmlFor="phone" className="text-sm font-medium text-stone block mb-2 tracking-wide">Téléphone</label>
           <input id="phone" name="phone" type="tel" className={inputClass} placeholder="+33 6 00 00 00 00" />
         </div>
         <div>
-          <label htmlFor="subject" className="label text-stone block mb-2">Objet *</label>
+          <label htmlFor="subject" className="text-sm font-medium text-stone block mb-2 tracking-wide">Objet *</label>
           <select id="subject" name="subject" required className={`${inputClass} cursor-pointer`}>
             <option value="" disabled>Sélectionner...</option>
             <option value="divorce-amiable">Divorce amiable</option>
@@ -88,7 +88,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="label text-stone block mb-2">Votre situation *</label>
+        <label htmlFor="message" className="text-sm font-medium text-stone block mb-2 tracking-wide">Votre situation *</label>
         <textarea
           id="message"
           name="message"
@@ -99,12 +99,12 @@ export default function ContactForm() {
         />
       </div>
 
-      <p className="label text-stone/50 text-[0.6rem]">
+      <p className="text-sm text-stone/50 font-light">
         Ces informations sont strictement confidentielles et protégées par le secret professionnel.
       </p>
 
       {status === 'error' && (
-        <p className="label text-burgundy">
+        <p className="text-sm text-burgundy font-medium">
           Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.
         </p>
       )}

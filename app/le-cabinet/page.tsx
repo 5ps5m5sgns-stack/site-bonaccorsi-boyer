@@ -76,7 +76,7 @@ export default function CabinetPage() {
             </h1>
           </div>
           <p
-            className="font-jost text-sm text-stone font-light max-w-xl mt-8 leading-relaxed animate-fade-in-up"
+            className="font-jost text-base text-stone font-light max-w-xl mt-8 leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.6s' }}
           >
             Avocate au Barreau de Lyon depuis plus de 25 ans, spécialisée en droit de la
@@ -114,7 +114,7 @@ export default function CabinetPage() {
             {/* Text */}
             <AnimatedSection delay={0.15} className="lg:col-span-3">
               <p className="label text-gold mb-6">Biographie</p>
-              <div className="space-y-5 font-jost text-sm text-charcoal-light font-light leading-relaxed">
+              <div className="space-y-5 font-jost text-base text-charcoal-light font-light leading-relaxed">
                 <p>
                   Maître Vanessa Bonaccorsi-Boyer est avocate au Barreau de Lyon depuis 1998.
                   Après une formation initiale croisant droit judiciaire et droit notarial,
@@ -159,7 +159,7 @@ export default function CabinetPage() {
                 <div className="bg-parchment p-10 h-full">
                   <p className="label text-gold/50 mb-6">0{i + 1}</p>
                   <h3 className="font-cormorant text-2xl text-charcoal mb-4">{v.title}</h3>
-                  <p className="font-jost text-xs text-stone font-light leading-relaxed">{v.desc}</p>
+                  <p className="font-jost text-base text-stone font-light leading-relaxed">{v.desc}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -210,8 +210,8 @@ export default function CabinetPage() {
               <StaggerItem key={m.abbr}>
                 <div className="border border-stone/15 p-8 h-full">
                   <p className="font-cormorant text-4xl text-gold font-light mb-3">{m.abbr}</p>
-                  <p className="font-jost text-xs text-stone font-medium tracking-wide mb-4">{m.full}</p>
-                  <p className="font-jost text-xs text-stone/70 font-light leading-relaxed">{m.desc}</p>
+                  <p className="font-jost text-sm text-stone font-medium tracking-wide mb-4">{m.full}</p>
+                  <p className="font-jost text-base text-stone/70 font-light leading-relaxed">{m.desc}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -224,7 +224,7 @@ export default function CabinetPage() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
           <AnimatedSection>
             <h2 className="display-md text-cream mb-6">Rencontrons-nous</h2>
-            <p className="font-jost text-sm text-cream/70 font-light max-w-md mx-auto mb-10 leading-relaxed">
+            <p className="font-jost text-base text-cream/70 font-light max-w-md mx-auto mb-10 leading-relaxed">
               Premier entretien confidentiel. En présentiel au cabinet, en visioconférence
               ou par téléphone — selon vos préférences.
             </p>

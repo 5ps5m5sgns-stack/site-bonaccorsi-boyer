@@ -41,8 +41,12 @@ export default function Navigation() {
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
-  const textColor = scrolled ? 'text-charcoal' : 'text-cream'
-  const mutedColor = scrolled ? 'text-stone' : 'text-cream/60'
+  const navLinkClass = `
+    relative text-[0.78rem] font-medium tracking-[0.14em] uppercase
+    transition-colors duration-200 whitespace-nowrap
+    after:absolute after:bottom-0 after:left-0 after:h-px after:w-0
+    after:bg-gold after:transition-all after:duration-300 hover:after:w-full
+  `
 
   return (
     <>
@@ -56,30 +60,38 @@ export default function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20 lg:h-24">
-          {/* Wordmark */}
+        {/* 3-column layout: logo | nav | phone+cta */}
+        <div className="max-w-screen-xl mx-auto px-6 xl:px-10 h-20 xl:h-24 grid grid-cols-[auto_1fr_auto] items-center gap-6">
+
+          {/* ── Logo ── */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <span className="w-px h-7 bg-gold transition-all duration-500 group-hover:h-9" />
-            <div>
-              <p className="label text-gold leading-none mb-0.5">Cabinet</p>
-              <p className={`font-cormorant text-[1.1rem] font-medium tracking-widest leading-none transition-colors duration-300 ${textColor}`}>
+            <span className="w-px h-7 bg-gold transition-all duration-500 group-hover:h-9 shrink-0" />
+            <div className="leading-none">
+              <p className="label text-gold mb-1" style={{ fontSize: '0.65rem' }}>Cabinet</p>
+              <p className={`font-cormorant text-[1.05rem] font-medium tracking-[0.15em] leading-none transition-colors duration-300 ${
+                scrolled ? 'text-charcoal' : 'text-cream'
+              }`}>
                 Bonaccorsi‑Boyer
               </p>
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7">
+          {/* ── Desktop nav — centré ── */}
+          <nav className="hidden xl:flex items-center justify-center gap-6 2xl:gap-8">
             {nav.map((item) => (
               <div
                 key={item.href}
-                className="relative"
+                className="relative pb-1"
                 onMouseEnter={() => item.sub && setActiveDropdown(item.href)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
                   href={item.href}
-                  className={`hover-gold label transition-colors duration-200 pb-0.5 ${mutedColor} hover:text-gold`}
+                  className={`${navLinkClass} ${
+                    scrolled
+                      ? 'text-charcoal-light hover:text-burgundy'
+                      : 'text-cream/75 hover:text-cream'
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -87,18 +99,18 @@ export default function Navigation() {
                 <AnimatePresence>
                   {item.sub && activeDropdown === item.href && (
                     <motion.div
-                      initial={{ opacity: 0, y: 6 }}
+                      initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 6 }}
-                      transition={{ duration: 0.18 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-5 bg-cream border border-parchment shadow-xl min-w-52 overflow-hidden"
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-4 bg-cream border border-parchment shadow-xl min-w-56 overflow-hidden z-50"
                     >
-                      <div className="h-px bg-gold opacity-60" />
+                      <div className="h-0.5 bg-gold opacity-70" />
                       {item.sub.map((s) => (
                         <Link
                           key={s.href}
                           href={s.href}
-                          className="block px-5 py-3 label text-stone hover:text-burgundy hover:bg-parchment transition-colors duration-150"
+                          className="block px-5 py-3.5 text-sm text-stone hover:text-burgundy hover:bg-parchment transition-colors duration-150 tracking-wide"
                         >
                           {s.label}
                         </Link>
@@ -110,42 +122,46 @@ export default function Navigation() {
             ))}
           </nav>
 
-          {/* Right: phone + RDV */}
-          <div className="hidden lg:flex items-center gap-5 shrink-0">
+          {/* ── Right : téléphone + bouton ── */}
+          <div className="hidden xl:flex items-center gap-5 shrink-0">
             <a
               href="tel:+33664736845"
-              className={`label transition-colors duration-200 ${mutedColor} hover:text-gold`}
+              className={`text-sm font-medium tracking-wide transition-colors duration-200 whitespace-nowrap ${
+                scrolled ? 'text-charcoal-light hover:text-gold' : 'text-cream/75 hover:text-cream'
+              }`}
             >
               +33 664 736 845
             </a>
-            <Link href="/contact" className="btn-primary py-2.5 px-5 text-[0.6rem]">
+            <Link href="/contact" className="btn-primary py-3 px-5">
               Rendez-vous
             </Link>
           </div>
 
-          {/* Hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-            className="lg:hidden relative w-8 h-6 flex flex-col justify-between"
-          >
-            {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                className={`block w-full h-px origin-center transition-all duration-400 ${
-                  scrolled ? 'bg-charcoal' : 'bg-cream'
-                } ${
-                  mobileOpen && i === 0 ? 'rotate-45 translate-y-[10px]' :
-                  mobileOpen && i === 1 ? 'opacity-0' :
-                  mobileOpen && i === 2 ? '-rotate-45 -translate-y-[14px]' : ''
-                }`}
-              />
-            ))}
-          </button>
+          {/* ── Hamburger (mobile / lg) ── */}
+          <div className="xl:hidden flex items-center justify-end">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              className="w-8 h-6 flex flex-col justify-between"
+            >
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className={`block w-full h-px origin-center transition-all duration-300 ${
+                    scrolled ? 'bg-charcoal' : 'bg-cream'
+                  } ${
+                    mobileOpen && i === 0 ? 'rotate-45 translate-y-[10px]' :
+                    mobileOpen && i === 1 ? 'opacity-0 scale-x-0' :
+                    mobileOpen && i === 2 ? '-rotate-45 -translate-y-[14px]' : ''
+                  }`}
+                />
+              ))}
+            </button>
+          </div>
         </div>
       </motion.header>
 
-      {/* Mobile fullscreen menu */}
+      {/* ── Menu mobile fullscreen ── */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -155,10 +171,9 @@ export default function Navigation() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-charcoal flex flex-col"
           >
-            {/* Gold top bar */}
-            <div className="h-px bg-gold mt-20" />
+            <div className="h-px bg-gold mt-20 opacity-40" />
 
-            <div className="flex-1 flex flex-col justify-center px-8 gap-1 overflow-y-auto">
+            <div className="flex-1 flex flex-col justify-center px-8 gap-0 overflow-y-auto">
               {nav.map((item, i) => (
                 <motion.div
                   key={item.href}
@@ -169,7 +184,7 @@ export default function Navigation() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block font-cormorant text-4xl text-cream/80 hover:text-gold py-4 border-b border-stone/10 transition-colors duration-200 leading-none"
+                    className="block font-cormorant text-4xl text-cream/80 hover:text-gold py-5 border-b border-stone/10 transition-colors duration-200 leading-none"
                   >
                     {item.label}
                   </Link>
@@ -181,10 +196,16 @@ export default function Navigation() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="px-8 pb-10 flex flex-col gap-4"
+              className="px-8 pb-12 flex flex-col gap-5"
             >
-              <a href="tel:+33664736845" className="label text-gold">+33 664 736 845</a>
-              <Link href="/contact" onClick={() => setMobileOpen(false)} className="btn-primary self-start">
+              <a href="tel:+33664736845" className="text-base font-medium text-gold tracking-wide">
+                +33 664 736 845
+              </a>
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="btn-primary self-start"
+              >
                 Prendre rendez-vous
               </Link>
             </motion.div>

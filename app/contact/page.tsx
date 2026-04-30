@@ -89,7 +89,7 @@ export default function ContactPage() {
             </h1>
           </div>
           <p
-            className="font-jost text-sm text-stone font-light max-w-md mt-8 leading-relaxed animate-fade-in-up"
+            className="font-jost text-base text-stone font-light max-w-md mt-8 leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.6s' }}
           >
             Premier entretien confidentiel. En présentiel au cœur de Lyon,
@@ -159,7 +159,7 @@ export default function ContactPage() {
               <AnimatedSection delay={0.1}>
                 <p className="label text-gold mb-4">Formulaire de contact</p>
                 <h2 className="display-sm text-charcoal mb-2">Écrivez-nous</h2>
-                <p className="font-jost text-xs text-stone font-light mb-10 leading-relaxed">
+                <p className="font-jost text-base text-stone font-light mb-10 leading-relaxed">
                   Toutes les informations que vous nous transmettez sont strictement
                   confidentielles et protégées par le secret professionnel de l'avocat.
                 </p>
