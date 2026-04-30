@@ -19,7 +19,7 @@ const values = [
   },
   {
     title: 'Disponibilité Réelle',
-    desc: 'Le cabinet reçoit du lundi au dimanche, de 9h à 20h, en présentiel, visioconférence ou par téléphone. Parce que les épreuves n'attendent pas les horaires de bureau.',
+    desc: "Le cabinet reçoit du lundi au dimanche, de 9h à 20h, en présentiel, visioconférence ou par téléphone. Parce que les épreuves n'attendent pas les horaires de bureau.",
   },
 ]
 
